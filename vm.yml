@@ -1,0 +1,10 @@
+# 2nd yml file
+---
+- hosts: tutes
+  become: true
+  vars_prompt:
+   - name: mahesh
+     prompt: please enter the package to start
+  tasks:
+   - name: pkg'{{mahesh}}' install
+     action: service name='{{mahesh}}' state=started

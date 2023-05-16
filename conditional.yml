@@ -1,0 +1,10 @@
+--- # conditional
+- hosts: tutes
+  become: true
+  tasks: 
+   - name: install apache2 for ubuntu
+     command: apt-get install apache2 -y
+     when: ansible_os_family == "ubuntu"
+   - name: install httpd for Redhat
+     command: yum install httpd  -y
+     when: ansible_os_family == "RedHat"

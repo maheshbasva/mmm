@@ -1,0 +1,5 @@
+--- 
+- hosts: tutes
+  become: true
+  roles:
+   - r1  

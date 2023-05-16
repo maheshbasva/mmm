@@ -1,0 +1,15 @@
+# this is my first ansible playbook
+---
+- hosts: tutes
+  become: true
+  vars_prompt: 
+   - name: mahesh
+     prompt: please insert the input value 
+  tasks: 
+   - name: pkg '{{mahesh}}' installation
+     action: yum pkg='{{mahesh}}' state=present
+     notify: service
+
+  handlers:  
+   - name: service
+     action: service name='{{mahesh}}' state=stopped

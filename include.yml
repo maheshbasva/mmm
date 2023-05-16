@@ -1,0 +1,5 @@
+--- #include file
+- hosts: tutes
+  become: true
+  tasks:
+    - include: vm.yml
